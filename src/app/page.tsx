@@ -1,18 +1,12 @@
 "use client";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Features } from "@/components/ui/features";
-import { GlareCard } from "@/components/ui/glare-card";
 import Image from "next/image";
-import badge1 from "@/assets/badge1.webp";
-import badge2 from "@/assets/badge2.webp";
-import badge3 from "@/assets/badge3.webp";
-import badge4 from "@/assets/badge4.webp";
 
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-
-const badges = [badge1, badge2, badge3, badge4];
+import BadgeGrid from "@/components/Badges";
 
 const Step = ({ title }: { title: string }) => {
   return (
@@ -72,24 +66,9 @@ export default function Home() {
           <span className="text-[#0289B6]">Top Rating Agencies</span>
         </h1>
 
-        <div className="w-full flex justify-center px-10 mt-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-30 gap-y-20  max-w-xl sm:max-w-4xl">
-            {[badge1, badge2, badge3, badge4].map((badge, idx) => (
-              <GlareCard
-                key={idx}
-                className="flex items-center justify-center w-full h-full"
-              >
-                <Image
-                  src={badge}
-                  alt={`Badge ${idx + 1}`}
-                  className="w-3/4 h-3/4 object-contain"
-                  priority
-                />
-              </GlareCard>
-            ))}
-          </div>
-        </div>
+        <BadgeGrid />
       </section>
+
       <section>
         <Footer />
       </section>
