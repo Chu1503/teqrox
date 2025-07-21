@@ -15,6 +15,7 @@ import {
 import React, { useState } from "react";
 import Image from "next/image";
 import teqrox_h_logo from "@/assets/teqrox_h_logo.webp";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 // export const metadata = {
 //   title: "TEQROX",
@@ -70,43 +71,46 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar>
-          <NavBody>
-          {/* <NavbarLogo /> */}
-            <NavItems items={navItems} />
-          </NavBody>
+        <div className="relative z-50">
+          <Navbar>
+            <NavBody>
+              {/* <NavbarLogo /> */}
+              <NavItems items={navItems} />
+            </NavBody>
 
-          <MobileNav>
-            <MobileNavHeader className="flex justify-between items-center w-full ">
-              <Image
-                src={teqrox_h_logo}
-                alt="TEQROX"
-                // width={30}
-                height={35}
-                className="object-contain"
-                priority
-              />
-              <MobileNavToggle
-                isOpen={isOpen}
-                onClick={() => setIsOpen(!isOpen)}
-              />
-            </MobileNavHeader>
+            <MobileNav>
+              <MobileNavHeader className="flex justify-between items-center w-full ">
+                <Image
+                  src={teqrox_h_logo}
+                  alt="TEQROX"
+                  // width={30}
+                  height={35}
+                  className="object-contain"
+                  priority
+                />
+                <MobileNavToggle
+                  isOpen={isOpen}
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              </MobileNavHeader>
 
-            <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)} >
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.link}
-                  onClick={() => setIsOpen(false)}
-                  className="text-white text-base font-medium"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </MobileNavMenu>
-          </MobileNav>
-        </Navbar>
+              <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                {navItems.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    onClick={() => setIsOpen(false)}
+                    className="text-white text-base font-medium"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </MobileNavMenu>
+            </MobileNav>
+          </Navbar>
 
+          <ScrollProgress className="h-1" />
+        </div>
         {children}
       </body>
     </html>
