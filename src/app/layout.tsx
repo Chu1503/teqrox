@@ -1,16 +1,24 @@
-// app/layout.tsx
+"use client";
 import "./globals.css";
 import {
   Navbar,
   NavBody,
   NavItems,
   MobileNav,
+  MobileNavToggle,
+  MobileNavHeader,
+  MobileNavMenu,
+  NavbarButton,
 } from "@/components/ui/resizable-navbar";
 
-export const metadata = {
-  title: "TEQROX",
-  description: "A Global Technology Group",
-};
+import React, { useState } from "react";
+import Image from "next/image";
+import teqrox_h_logo from "@/assets/teqrox_h_logo.webp";
+
+// export const metadata = {
+//   title: "TEQROX",
+//   description: "A Global Technology Group",
+// };
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -56,6 +64,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <html lang="en">
       <body>
@@ -63,7 +73,38 @@ export default function RootLayout({
           <NavBody>
             <NavItems items={navItems} />
           </NavBody>
+
+          <MobileNav>
+            <MobileNavHeader className="flex justify-between items-center w-full">
+              <Image
+                src={teqrox_h_logo}
+                alt="TEQROX"
+                // width={30}
+                height={35}
+                className="object-contain"
+                priority
+              />
+              <MobileNavToggle
+                isOpen={isOpen}
+                onClick={() => setIsOpen(!isOpen)}
+              />
+            </MobileNavHeader>
+
+            <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+              {navItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.link}
+                  onClick={() => setIsOpen(false)}
+                  className="text-white text-base font-medium"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </MobileNavMenu>
+          </MobileNav>
         </Navbar>
+
         {children}
       </body>
     </html>

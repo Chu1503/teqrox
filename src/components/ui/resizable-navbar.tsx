@@ -14,13 +14,13 @@ interface NavbarProps {
   children: React.ReactNode;
   className?: string;
 }
-
+ 
 interface NavBodyProps {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
 }
-
+ 
 interface NavItemsProps {
   items: {
     name: string;
@@ -29,18 +29,18 @@ interface NavItemsProps {
   className?: string;
   onItemClick?: () => void;
 }
-
+ 
 interface MobileNavProps {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
 }
-
+ 
 interface MobileNavHeaderProps {
   children: React.ReactNode;
   className?: string;
 }
-
+ 
 interface MobileNavMenuProps {
   children: React.ReactNode;
   className?: string;
@@ -89,7 +89,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "40%" : "100%",
+        width: visible ? "56rem" : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -105,8 +105,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         borderRadius: "9999px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-auto flex-row items-center justify-between self-start px-4 py-2 min-h-[52px] lg:flex",
-        visible && "border border-white/10 shadow-inner"
+        "relative z-[60] mx-auto hidden flex-row items-center justify-between self-start px-4 py-2 min-h-[52px] lg:flex",
+  visible && "border border-white/10 shadow-inner"
       )}
     >
       {children}
@@ -231,22 +231,6 @@ export const MobileNavToggle = ({
   );
 };
 
-// export const NavbarLogo = () => {
-//   return (
-//     <a
-//       href="#"
-//       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
-//     >
-//       <img
-//         src="https://assets.aceternity.com/logo-dark.png"
-//         alt="logo"
-//         width={30}
-//         height={30}
-//       />
-//       <span className="font-medium text-black dark:text-white">Startup</span>
-//     </a>
-//   );
-// };
 
 export const NavbarButton = ({
   href,
