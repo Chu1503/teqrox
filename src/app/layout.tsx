@@ -11,23 +11,25 @@ import {
   NavbarButton,
   NavbarLogo,
 } from "@/components/ui/resizable-navbar";
+import { Be_Vietnam_Pro } from "next/font/google";
 
 import React, { useState } from "react";
 import Image from "next/image";
 import teqrox_h_logo from "@/assets/teqrox_h_logo.webp";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 
-// export const metadata = {
-//   title: "TEQROX",
-//   description: "A Global Technology Group",
-// };
+const beVietnamPro = Be_Vietnam_Pro({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 const navItems = [
   { name: "Home", link: "/" },
   { name: "What We Do", link: "/what-we-do" },
   { name: "Customers", link: "/customers" },
   { name: "About Us", link: "/about" },
-  { name: "Service", link: "/service" },
+  { name: "Services", link: "/services" },
   { name: "Brochure", link: "/brochure.pdf" },
   { name: "Blog", link: "/blog" },
   { name: "Contact Us", link: "/contact" },
@@ -70,7 +72,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className={beVietnamPro.className}>
         <div className="relative z-50">
           <Navbar>
             <NavBody>
