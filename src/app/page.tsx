@@ -39,7 +39,6 @@ const CheckIcon = () => {
 export default function Home() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
-      \
       <section className="h-screen">
         <AuroraBackground>
           <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] px-30">

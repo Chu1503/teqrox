@@ -61,9 +61,8 @@
 }
 
 
-/* Ensure base background is black */
 html, body {
-  background: #0b0b0b; /* black background */
+  background: #0b0b0b; 
   scrollbar-gutter: stable;
   color-scheme: dark;
 }
@@ -75,7 +74,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0b0b; /* force black background */
+  background: #0b0b0b;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -91,7 +90,7 @@ html, body {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0289b6 #0b0b0b; /* thumb color, track color */
+  scrollbar-color: #0289b6 #0b0b0b;
 }
 
 
