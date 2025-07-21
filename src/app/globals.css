@@ -61,3 +61,37 @@
 }
 
 
+/* Ensure base background is black */
+html, body {
+  background: #0b0b0b; /* black background */
+  scrollbar-gutter: stable;
+  color-scheme: dark;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0b; /* force black background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0289b6;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #105474;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0289b6 #0b0b0b; /* thumb color, track color */
+}
+
+
