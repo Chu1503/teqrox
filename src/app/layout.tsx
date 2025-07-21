@@ -8,7 +8,6 @@ import {
   MobileNavToggle,
   MobileNavHeader,
   MobileNavMenu,
-  NavbarButton,
   NavbarLogo,
 } from "@/components/ui/resizable-navbar";
 import { Be_Vietnam_Pro } from "next/font/google";
