@@ -9,18 +9,20 @@ import {
 } from "framer-motion";
 
 import React, { useRef, useState } from "react";
+import Image from "next/image";
+import teqrox_h_logo from "@/assets/teqrox_h_logo.webp";
 
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
 }
- 
+
 interface NavBodyProps {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
 }
- 
+
 interface NavItemsProps {
   items: {
     name: string;
@@ -29,18 +31,18 @@ interface NavItemsProps {
   className?: string;
   onItemClick?: () => void;
 }
- 
+
 interface MobileNavProps {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
 }
- 
+
 interface MobileNavHeaderProps {
   children: React.ReactNode;
   className?: string;
 }
- 
+
 interface MobileNavMenuProps {
   children: React.ReactNode;
   className?: string;
@@ -67,7 +69,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      className={cn("fixed inset-x-0 top-20 z-40 w-full", className)}
+      className={cn("fixed inset-x-0 top-10 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -106,7 +108,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden flex-row items-center justify-between self-start px-4 py-2 min-h-[52px] lg:flex",
-  visible && "border border-white/10 shadow-inner"
+        visible && "border border-white/10 shadow-inner"
       )}
     >
       {children}
@@ -151,13 +153,16 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
+        // WebkitBackdropFilter: visible ? "blur(10px)" : "none",
         boxShadow: visible
-          ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
+          ? "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
         width: visible ? "90%" : "100%",
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
         borderRadius: visible ? "4px" : "2rem",
+        background: visible ? "rgba(255, 255, 255, 0.06)" : "transparent",
+        border: visible ? "1px solid rgba(255,255,255,0.1)" : "none",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -167,7 +172,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-neutral-950/80",
+        visible && "border border-white/10 shadow-inner",
         className
       )}
     >
@@ -201,17 +206,24 @@ export const MobileNavMenu = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
-            className
-          )}
-        >
-          {children}
-        </motion.div>
+       <motion.div
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+       style={{
+         background: "rgba(255, 255, 255, 0.06)",
+         backdropFilter: "blur(10px)",
+         boxShadow: 
+           "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
+         border: "1px solid rgba(255,255,255,0.1)",
+       }}
+       className={cn(
+         "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8 transition-all duration-300 ease-in-out",
+         className
+       )}
+     >
+       {children}
+     </motion.div>
       )}
     </AnimatePresence>
   );
@@ -231,6 +243,24 @@ export const MobileNavToggle = ({
   );
 };
 
+export const NavbarLogo = () => {
+  return (
+    <a
+      href="#"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+    >
+      <Image
+        src={teqrox_h_logo}
+        alt="TEQROX"
+        // width={30}
+        height={35}
+        className="object-contain"
+        priority
+      />
+      {/* <span className="font-medium text-black dark:text-white">Startup</span> */}
+    </a>
+  );
+};
 
 export const NavbarButton = ({
   href,

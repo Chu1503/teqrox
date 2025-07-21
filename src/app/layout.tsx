@@ -9,6 +9,7 @@ import {
   MobileNavHeader,
   MobileNavMenu,
   NavbarButton,
+  NavbarLogo,
 } from "@/components/ui/resizable-navbar";
 
 import React, { useState } from "react";
@@ -71,11 +72,12 @@ export default function RootLayout({
       <body>
         <Navbar>
           <NavBody>
+          {/* <NavbarLogo /> */}
             <NavItems items={navItems} />
           </NavBody>
 
           <MobileNav>
-            <MobileNavHeader className="flex justify-between items-center w-full">
+            <MobileNavHeader className="flex justify-between items-center w-full ">
               <Image
                 src={teqrox_h_logo}
                 alt="TEQROX"
@@ -90,7 +92,7 @@ export default function RootLayout({
               />
             </MobileNavHeader>
 
-            <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+            <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)} >
               {navItems.map((item, idx) => (
                 <a
                   key={idx}
