@@ -34,7 +34,7 @@ export default function AboutSection() {
         </motion.h1>
       </div>
 
-      <div className="flex items-center justify-center gap-10 lg:gap-20 mt-10 flex-col lg:flex-row">
+      <div className="flex items-center justify-center gap-10 lg:gap-20 mt-10 flex-col lg:flex-row mb-10">
         <motion.div
           variants={fadeInUp}
           initial="hidden"

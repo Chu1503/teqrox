@@ -2,6 +2,7 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Features } from "@/components/ui/features";
 
+import { Hero } from "@/components/ui/Hero";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
@@ -36,19 +37,16 @@ const CheckIcon = () => {
   );
 };
 
-export default function Home() {
+export default function HomeTwo() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
-      \
-      <section className="h-screen">
-        <AuroraBackground>
-          <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] px-30">
-            <span className="block">Our Solutions come in all</span>
-            <span className="block text-[#0289B6]">Shapes, Sizes & Forms</span>
-          </h1>
-        </AuroraBackground>
+      <section className="h-screen flex items-center justify-center bg-[#0b0b0b]">
+        <Hero />
       </section>
+
       <AboutSection />
+
+      {/* <AboutSection /> */}
       <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">
         <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
           What <span className="text-[#0289B6]">We Do?</span>
@@ -56,6 +54,7 @@ export default function Home() {
 
         <Features />
       </section>
+
       <ContactSection />
       <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">
         <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
@@ -66,6 +65,7 @@ export default function Home() {
 
         <BadgeGrid />
       </section>
+
       <section>
         <Footer />
       </section>
