@@ -40,6 +40,7 @@ export default function BadgeGrid() {
 
   return (
     <div className="w-full flex flex-col justify-center px-4 lg:px-10 mt-10 mb-10 h-fit bg-[#121212] py-20 border-y-2 border-[#292929]">
+      
       <motion.h1
         ref={titleRef}
         initial={{ opacity: 0, y: 50 }}

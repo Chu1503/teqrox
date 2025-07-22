@@ -42,10 +42,12 @@ export const ContainerScroll = ({
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
+    
     <div
       className="flex flex-col items-center justify-center relative"
       ref={containerRef}
     >
+      
       <div
         className="py-10 md:pt-40 md:pb-0 w-full relative"
         style={{

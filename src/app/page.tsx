@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
       <section className="h-fit bg-[#0b0b0b] max-w-screen overflow-hidden ">
+        
         <div className="absolute inset-0">
+          
           <AuroraBackground>
             <></>
           </AuroraBackground>

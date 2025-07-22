@@ -15,6 +15,7 @@ export const AuroraBackground = ({
 }: AuroraBackgroundProps) => {
   return (
     <main>
+      
       <div
         className={cn(
           "transition-bg relative flex h-screen flex-col items-center justify-center bg-[#0b0b0b]",
@@ -22,6 +23,29 @@ export const AuroraBackground = ({
         )}
         {...props}
       >
+               <svg
+          className={cn(
+            "absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20",
+            showRadialGradient &&
+              "[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,transparent_70%)]",
+          )}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <filter id="grainy-texture">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.65"
+              numOctaves="4"
+              stitchTiles="stitch"
+            />
+          </filter>
+          <rect
+            width="100%"
+            height="100%"
+            filter="url(#grainy-texture)"
+            fill="transparent"
+          />
+        </svg>
         <div
           className="absolute inset-0 overflow-hidden"
           style={
