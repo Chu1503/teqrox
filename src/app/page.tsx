@@ -9,13 +9,13 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 export default function Home() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
-      <section className="h-fit bg-[#0b0b0b] max-w-screen overflow-x-hidden">
+      <section className="h-fit bg-[#0b0b0b] max-w-screen overflow-hidden ">
         <div className="absolute inset-0">
           <AuroraBackground>
             <></>
           </AuroraBackground>
         </div>
-        <ContainerScroll titleComponent={undefined} children={undefined} />
+        <ContainerScroll children={undefined} />
       </section>
 
       <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">

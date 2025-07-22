@@ -6,12 +6,12 @@ import { CustomButton } from "./ui/custom-button";
 const HeroSection = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center overflow-hidden z-30 space-y-6">
-      <div className="w-full flex items-center justify-center min-h-[3.5em] sm:min-h-[2em] md:min-h-[6em] xl:min-h-[7.5em]">
+      <div className="w-full flex items-center justify-center min-h-[3.5em] sm:min-h-[2em] md:min-h-[6em] xl:min-h-[7.5em] pointer-events-none ">
         <TypewriterEffect />
       </div>
       <motion.p
         // className="text-center font-normal text-sm sm:text-lg md:text-xl lg:text-xl text-[#F5F6FB] leading-6 md:leading-12"
-        className="text-[#F5F6FB] relative z-20 font-normal text-base leading-10 md:text-xl"
+        className="text-[#F5F6FB] relative z-20 font-normal text-base leading-10 md:text-xl pointer-events-none "
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.6 }}

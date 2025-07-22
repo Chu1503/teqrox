@@ -67,6 +67,15 @@ html, body {
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
 /* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;

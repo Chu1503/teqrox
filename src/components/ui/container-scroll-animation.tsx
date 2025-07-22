@@ -8,17 +8,12 @@ import {
   easeOut,
 } from "motion/react";
 import AboutSection from "../AboutSection";
-import TypewriterEffect from "./typewriter";
 import HeroSection from "../HeroSection";
-import { CardSpotlight } from "./card-spotlight";
 import AboutCards from "../AboutCards";
-import { FlickeringGrid } from "./flickering-grid";
 
 export const ContainerScroll = ({
-  titleComponent,
   children,
 }: {
-  titleComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,30 +52,30 @@ export const ContainerScroll = ({
           perspective: "1000px",
         }}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
+        <Header translate={translate} />
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
-        <Footer translate={translate} titleComponent={titleComponent} />
+        <Footer translate={translate}/>
       </div>
     </div>
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
+export const Header = ({ translate }: any) => {
   return (
     <motion.div
       style={{
         translateY: translate,
       }}
-      className="items-center justify-center mx-auto text-center w-[90vw] sm:w-[75vw] lg:w-[50vw] flex flex-col overflow-hidden z-30 space-y-6 mb-20"
+      className="items-center justify-center mx-auto text-center w-[90vw] sm:w-[75vw] lg:w-[50vw] flex flex-col overflow-hidden z-30 space-y-6 mb-20 "
     >
       <HeroSection />
     </motion.div>
   );
 };
 
-export const Footer = ({ translate, titleComponent }: any) => {
+export const Footer = ({ translate }: any) => {
   return (
     <motion.div
       style={{
@@ -108,14 +103,17 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
-        boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+        boxShadow: "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+        pointerEvents: 'none' 
       }}
-      className="relative max-w-fit mx-auto h-[30rem] md:h-[30rem] lg:h-[35rem] w-full p-2 md:p-6 bg-[#222222] 
+      className="pointer-events-none not-only:relative max-w-fit mx-auto h-[30rem] md:h-[30rem] lg:h-[35rem] w-full p-2 md:p-6 bg-[#222222] 
       rounded-[30px] shadow-[0_0_20px_#0289B6,0_0_40px_#0289B6,0_0_80px_#0289B6] before:absolute 
-      before:inset-0 before:rounded-[30px] before:shadow-[0_0_40px_#0289B6,0_0_70px_#0289B6] before:z-[-1]"
+      before:inset-0 before:rounded-[30px] before:shadow-[0_0_40px_#0289B6,0_0_70px_#0289B6] before:z-[-1] "
+    >
+      <div 
+        className="h-full w-full overflow-hidden rounded-2xl bg-[#121212] md:rounded-2xl md:p-4 "
+        style={{ pointerEvents: 'none' }}
       >
-      <div className=" h-full w-full overflow-hidden rounded-2xl bg-[#121212] md:rounded-2xl md:p-4">
         <AboutSection />
       </div>
     </motion.div>
