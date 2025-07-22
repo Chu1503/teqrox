@@ -10,13 +10,15 @@ export const CustomButton = ({
     <button
       {...props}
       className={cn(
-        "group flex items-center gap-3 rounded-full border border-transparent cursor-pointer hover:border-[#F5F6FB] bg-[#fff] px-5 py-2 text-black transition-colors duration-300 hover:bg-black hover:text-[#F5F6FB]",
+        "group flex items-center gap-2 rounded-full border border-transparent cursor-pointer " +
+          "hover:border-[#F5F6FB] bg-white px-2 py-1 text-black transition-colors duration-300 " +
+          "hover:bg-black hover:text-[#F5F6FB]",
         className
       )}
     >
-      <span className="text-md font-bold uppercase">Learn more</span>
-      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white transition-colors duration-300 group-hover:bg-[#F5F6FB] group-hover:text-black">
-        <ArrowRight size={18} />
+      <span className="text-[12px] font-bold uppercase ml-1">Learn more</span>
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-black text-white transition-colors duration-300 group-hover:bg-[#F5F6FB] group-hover:text-black">
+        <ArrowRight size={15} />
       </div>
     </button>
   );

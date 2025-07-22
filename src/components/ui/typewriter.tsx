@@ -80,7 +80,7 @@ export default function TypewriterEffect() {
 
   return (
     <>
-      <div className="text-3xl md:text-7xl font-normal text-neutral-200 text-center">
+      <div className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-normal text-neutral-200 text-center">
         <span>
           {staticPart}
           <span className="text-[#0289b6]">{highlightPart}</span>

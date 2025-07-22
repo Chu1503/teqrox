@@ -16,7 +16,7 @@ const fadeInUp = {
 
 export default function AboutSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center h-full w-full overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center h-full overflow-hidden">
       <div className="absolute inset-0">
         <FlickeringGrid
           className="relative inset-0 z-0 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
@@ -38,7 +38,8 @@ export default function AboutSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.3 }}
-          className="text-center font-normal text-xl md:text-2xl lg:text-2xl text-[#F5F6FB] leading-14"
+          // className="text-center font-normal text-sm sm:text-lg md:text-xl lg:text-xl text-[#F5F6FB] leading-6 md:leading-12"
+          className="text-[#F5F6FB] relative z-20 font-normal text-base leading-10 md:text-xl w-[90vw] sm:w-[75vw] lg:w-[50vw] text-center"
         >
           TEQROX has all the modernization tools and cloud solutions to
           accelerate, integrate and transform your business. From data science
