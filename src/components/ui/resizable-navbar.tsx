@@ -47,6 +47,7 @@ interface MobileNavMenuProps {
   children: React.ReactNode;
   className?: string;
   isOpen: boolean;
+  visible?: boolean;
   onClose: () => void;
 }
 
@@ -123,7 +124,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white transition duration-200 lg:flex lg:space-x-2",
+        "hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white transition duration-200 lg:flex lg:space-x-2",
         className
       )}
     >
@@ -147,19 +148,72 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     </motion.div>
   );
 };
+type AnchorProps = {
+  as?: "a";
+  href: string;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+type ButtonProps = {
+  as: "button";
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+type NavbarButtonProps = (AnchorProps | ButtonProps) & {
+  children: React.ReactNode;
+  className?: string;
+  variant?: "primary" | "secondary" | "dark" | "gradient";
+};
+
+export const NavbarButton = (props: NavbarButtonProps) => {
+  const { as = "a", children, className, variant = "primary", ...rest } = props;
+
+  const baseStyles =
+    "px-4 py-2 rounded-full bg-white text-black text-base font-mdeium cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+
+  const variantStyles = {
+    primary:
+      "shadow-[0_0_24px_rgba(0,0,0,0.08),_0_1px_1px_rgba(0,0,0,0.06),_0_0_0_1px_rgba(255,255,255,0.06),_0_0_4px_rgba(255,255,255,0.08),_0_16px_68px_rgba(0,0,0,0.04),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+    secondary: "bg-transparent shadow-none text-white",
+    dark: "bg-black text-white",
+    gradient: "bg-gradient-to-b from-blue-500 to-blue-700 text-white",
+  };
+
+  if (as === "button") {
+    const buttonProps = rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+    return (
+      <button
+        className={cn(baseStyles, variantStyles[variant], className)}
+        {...buttonProps}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  const { href, ...anchorRest } = rest as AnchorProps;
+
+  return (
+    <a
+      href={href}
+      className={cn(baseStyles, variantStyles[variant], className)}
+      {...anchorRest}
+    >
+      {children}
+    </a>
+  );
+};
 
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
-        // WebkitBackdropFilter: visible ? "blur(10px)" : "none",
         boxShadow: visible
           ? "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
         width: visible ? "90%" : "100%",
-        paddingRight: visible ? "12px" : "0px",
-        paddingLeft: visible ? "12px" : "0px",
+        paddingRight: visible ? "12px" : "40px",
+        paddingLeft: visible ? "12px" : "40px",
         borderRadius: visible ? "4px" : "2rem",
         background: visible ? "rgba(255, 255, 255, 0.06)" : "transparent",
         border: visible ? "1px solid rgba(255,255,255,0.1)" : "none",
@@ -171,7 +225,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full  flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
         visible && "border border-white/10 shadow-inner",
         className
       )}
@@ -202,28 +256,32 @@ export const MobileNavMenu = ({
   className,
   isOpen,
   onClose,
+  visible,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
       {isOpen && (
-       <motion.div
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1 }}
-       exit={{ opacity: 0 }}
-       style={{
-         background: "rgba(255, 255, 255, 0.06)",
-         backdropFilter: "blur(10px)",
-         boxShadow: 
-           "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
-         border: "1px solid rgba(255,255,255,0.1)",
-       }}
-       className={cn(
-         "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8 transition-all duration-300 ease-in-out",
-         className
-       )}
-     >
-       {children}
-     </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+          }}
+          exit={{ opacity: 0 }}
+          style={{
+            background: "rgba(0, 0, 0, 0.9)",
+            WebkitBackdropFilter: "blur(10px)",
+            backdropFilter: "blur(10px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            boxShadow:
+              "0 0 24px rgba(0,0,0,0.08), 0 1px 1px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.06), 0 0 4px rgba(255,255,255,0.08), 0 16px 68px rgba(0,0,0,0.04), 0 1px 0 rgba(255, 255, 255, 0.1) inset",
+          }}
+          className={cn(
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg px-4 py-8 transition-all duration-300 ease-in-out",
+            className
+          )}
+        >
+          {children}
+        </motion.div>
       )}
     </AnimatePresence>
   );
@@ -261,4 +319,3 @@ export const NavbarLogo = () => {
     </a>
   );
 };
-

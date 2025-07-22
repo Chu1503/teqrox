@@ -68,7 +68,7 @@ export const Header = ({ translate }: any) => {
       style={{
         translateY: translate,
       }}
-      className="items-center justify-center mx-auto text-center w-[90vw] sm:w-[75vw] lg:w-[50vw] flex flex-col overflow-hidden z-30 space-y-6 mb-20 "
+      className="items-center justify-center mx-auto text-center w-[90vw] sm:w-[75vw] lg:w-[50vw] flex flex-col overflow-hidden z-30 space-y-6 mb-20 mt-[175px] sm:mt-0"
     >
       <HeroSection />
     </motion.div>

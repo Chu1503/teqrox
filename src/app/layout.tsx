@@ -9,6 +9,7 @@ import {
   MobileNavHeader,
   MobileNavMenu,
   NavbarLogo,
+  NavbarButton,
 } from "@/components/ui/resizable-navbar";
 import { Be_Vietnam_Pro } from "next/font/google";
 
@@ -25,13 +26,13 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 const navItems = [
   { name: "Home", link: "/" },
-  { name: "What We Do", link: "/what-we-do" },
-  { name: "Customers", link: "/customers" },
-  { name: "About Us", link: "/about" },
+  // { name: "What We Do", link: "/what-we-do" },
+  { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
-  { name: "Brochure", link: "/brochure.pdf" },
+  { name: "Customers", link: "/customers" },
   { name: "Blog", link: "/blog" },
-  { name: "Contact Us", link: "/contact" },
+  { name: "Brochure", link: "/brochure.pdf" },
+  { name: "Contact", link: "/contact" },
 ];
 
 <svg style={{ position: "absolute", width: 0, height: 0 }}>
@@ -77,6 +78,7 @@ export default function RootLayout({
             <NavBody>
               {/* <NavbarLogo /> */}
               <NavItems items={navItems} />
+              {/* <NavbarButton href="#contact">Contact Us</NavbarButton> */}
             </NavBody>
 
             <MobileNav>

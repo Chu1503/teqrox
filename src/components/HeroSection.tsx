@@ -5,7 +5,7 @@ import { CustomButton } from "./ui/custom-button";
 
 const HeroSection = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center overflow-hidden z-30 space-y-6">
+    <div className="w-full flex flex-col items-center justify-center overflow-hidden z-30 space-y-7">
       <div className="w-full flex items-center justify-center min-h-[3.5em] sm:min-h-[2em] md:min-h-[6em] xl:min-h-[7.5em] pointer-events-none ">
         <TypewriterEffect />
       </div>
