@@ -9,12 +9,12 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 export default function Home() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
-      <section className="h-fit bg-[#0b0b0b]">
-        {/* <div className="absolute inset-0">
+      <section className="h-fit bg-[#0b0b0b] max-w-screen overflow-x-hidden">
+        <div className="absolute inset-0">
           <AuroraBackground>
             <></>
           </AuroraBackground>
-        </div> */}
+        </div>
         <ContainerScroll titleComponent={undefined} children={undefined} />
       </section>
 
