@@ -78,15 +78,8 @@ export default function Home() {
       </section>
 
       <ContactSection />
-      <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">
-        <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
-          Recognized by
-          <div className="h-[25px]"></div>
-          <span className="text-[#0289B6]">Top Rating Agencies</span>
-        </h1>
 
-        <BadgeGrid />
-      </section>
+      <BadgeGrid />
       <section>
         <Footer />
       </section>
