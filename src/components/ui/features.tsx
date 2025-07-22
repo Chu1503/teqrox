@@ -1,67 +1,67 @@
 import { cn } from "@/lib/utils";
-import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-} from "@tabler/icons-react";
+
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+import application from "@/assets/icons/application.webp";
+import cloud from "@/assets/icons/cloud.webp";
+import devops from "@/assets/icons/devops.webp";
+import iot from "@/assets/icons/iot.webp";
+import data from "@/assets/icons/data.webp";
+import digital from "@/assets/icons/digital.webp";
+import automation from "@/assets/icons/automation.webp";
+import penetration from "@/assets/icons/penetration.webp";
 
 export function Features() {
   const features = [
     {
       title: "Application Services",
       description:
-        "Our Application Services enhance functionality through performance monitoring, load balancing, autoscaling, acceleration, and micro-segmentation, ensuring your applications are continuously optimized, monitored, and efficiently orchestrated.",
-      icon: <IconRouteAltLeft />,
+        "We offer a suite of services that enhance application performance through monitoring, load balancing, autoscaling, and optimization.",
+      iconSrc: application,
     },
     {
       title: "Cloud Services",
       description:
-        "Are infrastructure costs consuming your IT budget, leaving little room for innovation? TEQROX Solutions LLP helps you refocus on your business by taking over IT management with expert cloud services. ",
-      icon: <IconRouteAltLeft />,
+        "We help businesses reduce IT costs by offering reliable cloud services, currently focused on public cloud and expanding into hybrid solutions, so they can stay focused on growth instead of infrastructure.",
+      iconSrc: cloud,
     },
     {
       title: "Enterprise Agile DevOps",
       description:
-        "We empower your digital transformation with a customer-centric, agile approach. By integrating Enterprise Agile DevOps into your software development, we help you accelerate delivery, streamline processes, and enhance customer experience.",
-      icon: <IconRouteAltLeft />,
+        "We support your digital transformation with Agile DevOps solutions that streamline development, boost delivery speed, and keep your business competitive through continuous innovation and customer focus.",
+      iconSrc: devops,
     },
     {
-      title: "Internet of Things (IoT)",
+      title: "Internet of Things",
       description:
-        "We offer IoT as a specialized service to help clients unlock new possibilities through scalable end-to-end solutions. From hardware and software to seamless plug-and-play deployments, our expert teams eliminate fragmented systems and complex tech, making IoT rollouts faster, more efficient, and easier to manage.",
-      icon: <IconRouteAltLeft />,
+        "Our IoT services offer end-to-end scalable solutions powered by AI and real-time insights, making it easy for businesses to deploy, manage, and transform through connected, secure, and intelligent systems.",
+      iconSrc: iot,
     },
     {
       title: "Data & Analytics Service",
       description:
-        "Our data and analytics services deliver fast, reliable insights through lightweight, customizable dashboards tailored to your needs, typically live within 24 hours. We handle everything from deployment to integration and maintenance, ensuring seamless, efficient analysis with minimal cloud usage.",
-      icon: <IconRouteAltLeft />,
+        "Our data and analytics services deliver fast, customizable insights through efficient dashboards and reports, helping businesses make smarter decisions while staying secure, scalable, and ahead of the competition.",
+      iconSrc: data,
     },
     {
       title: "Digital Services",
       description:
-        "We offer end-to-end digital services, including Digital Commerce, Digital Interactions, and Digital Marketing, to drive growth and enhance customer engagement. Our solutions are designed to boost visibility, streamline operations, and elevate brand presence across all digital channels.",
-      icon: <IconRouteAltLeft />,
+        "Our digital services bundle helps businesses grow by boosting online visibility, streamlining customer engagement, and driving sales through tailored, end-to-end digital strategies.",
+      iconSrc: digital,
     },
     {
       title: "Automation Testing",
       description:
-        "We deliver modern Automation Testing services that minimize regression time, enhance reusability, and reduce maintenance costs, ensuring faster, error-free software delivery.",
-      icon: <IconRouteAltLeft />,
+        "Our automation testing services ensure faster, more reliable software releases by reducing regression time, supporting multi-platform testing, and improving performance with flexible, data-driven methods.",
+      iconSrc: automation,
     },
     {
       title: "Penetration Testing Service",
       description:
-        "Penetration Testing (Pentest) is an in-depth ethical cybersecurity assessment designed to identify and safely address vulnerabilities or misconfigurations in IT infrastructure and web applications. Unlike basic vulnerability assessments, Pentests simulate real-world attack scenarios using white, gray, or black box approaches to uncover deeper security flaws.",
-      icon: <IconRouteAltLeft />,
+        "Our penetration testing services provide in-depth security checks to identify and fix vulnerabilities in your IT infrastructure, using white, gray, or black box methods tailored to your needs.",
+      iconSrc: penetration,
     },
   ];
   return (
@@ -72,16 +72,22 @@ export function Features() {
     </div>
   );
 }
+interface FeatureProps {
+  title: string;
+  description: string;
+  iconSrc: StaticImageData;
+  index: number;
+}
 
 const Feature = ({
   title,
   description,
-  icon,
+  iconSrc,
   index,
 }: {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  iconSrc: StaticImageData;
   index: number;
 }) => {
   const controls = useAnimation();
@@ -119,7 +125,15 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-[#105474] to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-[#0289b6]">{icon}</div>
+      <div className="mb-4 relative z-10 px-10 text-[#0289b6]">
+        <Image
+          src={iconSrc}
+          alt={`${title} icon`}
+          width={50}
+          height={50}
+          className="object-contain"
+        />
+      </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
         <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-[#0289b6] font-normal text-2xl">
