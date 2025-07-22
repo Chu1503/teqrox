@@ -83,7 +83,7 @@ export const Footer = ({ translate }: any) => {
       style={{
         translateY: translate,
       }}
-      className="mt-[00px]"
+      className="mt-0 lg:-mt-[69px]"
     >
       <AboutCards />
     </motion.div>
