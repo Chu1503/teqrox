@@ -6,6 +6,13 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import BadgeGrid from "@/components/Badges";
+import TypewriterEffect from "@/components/ui/typewriter";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { CustomButton } from "@/components/ui/custom-button";
+import { motion } from "framer-motion";
+import HeroSection from "@/components/HeroSection";
+import { Hero } from "@/components/ui/Hero";
+import ScrollCardContainer from "@/components/ContainerCardScroll";
 
 const Step = ({ title }: { title: string }) => {
   return (
@@ -36,18 +43,32 @@ const CheckIcon = () => {
   );
 };
 
+<svg xmlns="http://www.w3.org/2000/svg" className="hidden">
+  <filter id="paperTexture" x="0" y="0" width="100%" height="100%">
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.9"
+      numOctaves="4"
+      result="noise"
+    />
+    <feDiffuseLighting in="noise" lighting-color="#121212" surfaceScale="1">
+      <feDistantLight azimuth="45" elevation="55" />
+    </feDiffuseLighting>
+  </filter>
+</svg>;
+
 export default function Home() {
   return (
     <main className="relative flex flex-col bg-[#0b0b0b]">
-      <section className="h-screen">
-        <AuroraBackground>
-          <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] px-30">
-            <span className="block">Our Solutions come in all</span>
-            <span className="block text-[#0289B6]">Shapes, Sizes & Forms</span>
-          </h1>
-        </AuroraBackground>
+      <section className="h-fit bg-[#0b0b0b]">
+        <div className="absolute inset-0">
+          <AuroraBackground>
+            <></>
+          </AuroraBackground>
+        </div>
+        <ContainerScroll titleComponent={undefined} children={undefined} />
       </section>
-      <AboutSection />
+
       <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">
         <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
           What <span className="text-[#0289B6]">We Do?</span>
@@ -55,6 +76,7 @@ export default function Home() {
 
         <Features />
       </section>
+
       <ContactSection />
       <section className="h-fit px-10 bg-[#121212] py-20 border-y-2 border-[#292929]">
         <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
