@@ -83,9 +83,9 @@ export default function TypewriterEffect() {
       <div className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-normal text-neutral-200 text-center">
         <span>
           {staticPart}
-          <span className="text-[#0289b6]">{highlightPart}</span>
+          <span className="text-light-blue">{highlightPart}</span>
         </span>
-        <span className="animate-pulse w-0.5 text-[#0289b6]">|</span>
+        <span className="animate-pulse w-0.5 text-light-blue">|</span>
       </div>
     </>
   );

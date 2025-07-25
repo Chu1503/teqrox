@@ -102,4 +102,63 @@ body {
   scrollbar-color: #0289b6 #0b0b0b;
 }
 
+/* LIGHT MODE */
+/* :root {
+  --color-background: #F5F6FB;
+  --color-dark: #0b0b0b;
+  --color-light: #efefef;
+  --color-border: #292929;
+  --color-light-blue: #0289b6;
+  --color-dark-blue: #105474;
+} */
+
+/* DARK MODE */
+:root {
+  --color-background: #0b0b0b;
+  --color-dark: #F5F6FB;
+  --color-light: #121212;
+  --color-border: #292929;
+  --color-light-blue: #0289b6;
+  --color-dark-blue: #105474;
+}
+
+.bg-background {
+  background-color: var(--color-background);
+}
+.bg-dark {
+  background-color: var(--color-dark);
+}
+.bg-light {
+  background-color: var(--color-light);
+}
+.bg-light-blue {
+  background-color: var(--color-light-blue);
+}
+.bg-dark-blue {
+  background-color: var(--color-dark-blue);
+}
+
+.text-background {
+  color: var(--color-background);
+}
+.text-dark {
+  color: var(--color-dark);
+}
+.text-light {
+  color: var(--color-light);
+}
+.text-light-blue {
+  color: var(--color-light-blue);
+}
+.text-dark-blue {
+  color: var(--color-dark-blue);
+}
+
+.border-border {
+  border-color: var(--color-border);
+}
+
+.border-dark {
+  border-color: var(--color-dark);
+}
 

@@ -115,7 +115,7 @@ before:shadow-[0_0_12px_#0289B6,0_0_24px_#0289B6] before:z-[-1]"
 
     >
       <div 
-        className="h-full w-full overflow-hidden rounded-2xl bg-[#121212] md:rounded-2xl md:p-4 "
+        className="h-full w-full overflow-hidden rounded-2xl bg-light md:rounded-2xl md:p-4 "
         style={{ pointerEvents: 'none' }}
       >
         <AboutSection />

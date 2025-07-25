@@ -26,11 +26,11 @@ const AboutCards = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3 }}
-              className="text-2xl font-semibold relative text-[#0289b6] tracking-widest uppercase mb-5"
+              className="text-2xl font-semibold relative text-light-blue tracking-widest uppercase mb-5"
             >
               Our Vision
             </motion.p>
-            <p className="text-[#F5F6FB] relative z-20 font-normal text-sm sm:text-base leading-10 ">
+            <p className="text-dark relative z-20 font-normal text-sm sm:text-base leading-10 ">
               To create, innovate and transform digital communities and
               enterprises by creating value, transparency, trust, and integrity
               with a diversified workforce with unified goals and aspirations.
@@ -52,11 +52,11 @@ const AboutCards = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3 }}
-              className="text-2xl font-semibold relative text-[#0289b6] tracking-widest uppercase mb-5"
+              className="text-2xl font-semibold relative text-light-blue tracking-widest uppercase mb-5"
             >
               Our Mission
             </motion.p>
-            <p className="text-[#F5F6FB] relative z-20 font-normal text-sm sm:text-base leading-10 ">
+            <p className="text-dark relative z-20 font-normal text-sm sm:text-base leading-10 ">
               {" "}
               To deliver end-to-end solutions from research to go-to-market,
               driving automation to reduce costs, boost efficiency, and ensure

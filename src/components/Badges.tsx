@@ -39,18 +39,18 @@ export default function BadgeGrid() {
   }, [cardRefs.map((r) => r.inView).join()]); 
 
   return (
-    <div className="w-full flex flex-col justify-center px-4 lg:px-10 mt-10 mb-10 h-fit bg-[#121212] py-20 border-y-2 border-[#292929]">
+    <div className="w-full flex flex-col justify-center px-4 lg:px-10 mt-10 mb-10 h-fit bg-light py-20 border-y-2 border-border">
       
       <motion.h1
         ref={titleRef}
         initial={{ opacity: 0, y: 50 }}
         animate={titleControls}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10"
+        className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-dark mb-10"
       >
         Recognized by
         <div className="h-[25px]" />
-        <span className="text-[#0289B6]">Top Rating Agencies</span>
+        <span className="text-light-blue">Top Rating Agencies</span>
       </motion.h1>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-20 lg:gap-10 mt-10">
@@ -71,10 +71,10 @@ export default function BadgeGrid() {
               }}
               className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start p-4 relative w-[280px] h-[300px]"
             >
-              <Icon className="absolute h-5 w-5 -top-3 -left-3 dark:text-white text-black" />
-              <Icon className="absolute h-5 w-5 -bottom-3 -left-3 dark:text-white text-black" />
-              <Icon className="absolute h-5 w-5 -top-3 -right-3 dark:text-white text-black" />
-              <Icon className="absolute h-5 w-5 -bottom-3 -right-3 dark:text-white text-black" />
+              <Icon className="absolute h-5 w-5 -top-3 -left-3  text-dark" />
+              <Icon className="absolute h-5 w-5 -bottom-3 -left-3  text-dark" />
+              <Icon className="absolute h-5 w-5 -top-3 -right-3  text-dark" />
+              <Icon className="absolute h-5 w-5 -bottom-3 -right-3  text-dark" />
               <EvervaultCard image={badge} />
             </motion.div>
           );

@@ -124,7 +124,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white transition duration-200 lg:flex lg:space-x-2",
+        "hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-dark transition duration-200 lg:flex lg:space-x-2",
         className
       )}
     >
@@ -132,7 +132,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-white "
+          className="relative px-4 py-2 text-dark "
           key={`link-${idx}`}
           href={item.link}
         >
@@ -167,14 +167,14 @@ export const NavbarButton = (props: NavbarButtonProps) => {
   const { as = "a", children, className, variant = "primary", ...rest } = props;
 
   const baseStyles =
-    "px-4 py-2 rounded-full bg-white text-black text-base font-mdeium cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-full bg-dark text-black text-base font-mdeium cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary:
       "shadow-[0_0_24px_rgba(0,0,0,0.08),_0_1px_1px_rgba(0,0,0,0.06),_0_0_0_1px_rgba(255,255,255,0.06),_0_0_4px_rgba(255,255,255,0.08),_0_16px_68px_rgba(0,0,0,0.04),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
-    secondary: "bg-transparent shadow-none text-white",
-    dark: "bg-black text-white",
-    gradient: "bg-gradient-to-b from-blue-500 to-blue-700 text-white",
+    secondary: "bg-transparent shadow-none text-dark",
+    dark: "bg-black text-dark",
+    gradient: "bg-gradient-to-b from-blue-500 to-blue-700 text-dark",
   };
 
   if (as === "button") {
@@ -295,9 +295,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="dark:text-dark" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-dark" onClick={onClick} />
   );
 };
 
@@ -315,7 +315,7 @@ export const NavbarLogo = () => {
         className="object-contain"
         priority
       />
-      {/* <span className="font-medium text-black dark:text-white">Startup</span> */}
+      {/* <span className="font-medium text-black dark:text-dark">Startup</span> */}
     </a>
   );
 };
