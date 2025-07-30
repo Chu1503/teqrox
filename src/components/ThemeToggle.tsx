@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
 
 export const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
@@ -12,6 +13,10 @@ export const ThemeToggle = () => {
     "--color-border": "#292929",
     "--color-light-blue": "#0289b6",
     "--color-dark-blue": "#105474",
+    "--color-aurora-background": "#0289b6",
+    "--color-aurora": "#121212",
+    "--color-contact": "#F5F6FB",
+    "--color-border-soft": "rgba(0, 0, 0, 0.2)",
   };
 
   const darkTheme = {
@@ -21,6 +26,10 @@ export const ThemeToggle = () => {
     "--color-border": "#292929",
     "--color-light-blue": "#0289b6",
     "--color-dark-blue": "#105474",
+    "--color-aurora-background": "#0b0b0b",
+    "--color-aurora": "#0289b6",
+    "--color-contact": "#0289b6",
+    "--color-border-soft": "rgba(255, 255, 255, 0.2)",
   };
 
   const applyTheme = (theme: Record<string, string>) => {
@@ -50,9 +59,11 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="px-2 py-1 text-sm rounded bg-light-blue text-black font-medium"
+      className={`p-2 rounded-full transition-colors duration-300 shadow 
+        ${isDark ? "bg-white text-black" : "bg-black text-white"}`}
+      aria-label="Toggle Theme"
     >
-      {isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
     </button>
   );
 };

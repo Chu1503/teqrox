@@ -12,7 +12,7 @@ const HeroSection = () => {
       </div>
       <motion.p
         // className="text-center font-normal text-sm sm:text-lg md:text-xl lg:text-xl text-dark leading-6 md:leading-12"
-        className="text-dark relative z-20 font-normal text-base leading-10 md:text-xl pointer-events-none "
+        className="text-white relative z-20 font-normal text-base leading-10 md:text-xl pointer-events-none "
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.6 }}

@@ -39,7 +39,7 @@ export default function BadgeGrid() {
   }, [cardRefs.map((r) => r.inView).join()]); 
 
   return (
-    <div className="w-full flex flex-col justify-center px-4 lg:px-10 mt-10 mb-10 h-fit bg-light py-20 border-y-2 border-border">
+    <div className="w-full flex flex-col justify-center px-4 lg:px-10  h-fit bg-light py-20 border-y-2 border-border">
       
       <motion.h1
         ref={titleRef}
@@ -69,7 +69,7 @@ export default function BadgeGrid() {
                 ease: "easeOut",
                 delay: index * 0.1,
               }}
-              className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start p-4 relative w-[280px] h-[300px]"
+              className="border border-border-soft flex flex-col items-start p-4 relative w-[280px] h-[300px]"
             >
               <Icon className="absolute h-5 w-5 -top-3 -left-3  text-dark" />
               <Icon className="absolute h-5 w-5 -bottom-3 -left-3  text-dark" />

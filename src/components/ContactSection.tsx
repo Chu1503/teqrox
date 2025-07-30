@@ -19,7 +19,7 @@ const ContactSection = () => {
   return (
     <section
       ref={ref}
-      className="relative h-full py-20 px-10 overflow-hidden"
+      className="relative h-full py-20 px-10 overflow-hidden bg-aurora-background"
     >
       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_50px]" />
 
@@ -29,8 +29,8 @@ const ContactSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="mx-auto max-w-7xl lg:flex lg:items-center lg:justify-between px-5"
       >
-        <h2 className="text-5xl md:text-6xl lg:text-7xl text-dark">
-          Engage <span className="text-light-blue">with us</span>
+        <h2 className="text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB]">
+          Engage <span className="text-aurora">with us</span>
         </h2>
         <div className="text-left font-normal text-xl md:text-2xl lg:text-2xl text-dark max-w-xl mt-10 lg:mt-0">
           <p>
@@ -40,7 +40,7 @@ const ContactSection = () => {
           <div className="mt-4 z-30">
             <Link
               href="/contact"
-              className="text-base font-semibold text-light-blue hover:text-dark-blue inline-flex items-center gap-2 transition-colors"
+              className="text-base font-semibold text-contact hover:text-dark-blue inline-flex items-center gap-2 transition-colors"
             >
               Contact us
               <ArrowRight className="h-4 w-4" />

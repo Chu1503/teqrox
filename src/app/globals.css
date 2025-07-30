@@ -62,9 +62,8 @@
 
 
 html, body {
-  background: #0b0b0b; 
+  background-color: #0b0b0b;
   scrollbar-gutter: stable;
-  color-scheme: dark;
 }
 
 html {
@@ -102,26 +101,6 @@ body {
   scrollbar-color: #0289b6 #0b0b0b;
 }
 
-/* LIGHT MODE */
-/* :root {
-  --color-background: #F5F6FB;
-  --color-dark: #0b0b0b;
-  --color-light: #efefef;
-  --color-border: #292929;
-  --color-light-blue: #0289b6;
-  --color-dark-blue: #105474;
-} */
-
-/* DARK MODE */
-:root {
-  --color-background: #0b0b0b;
-  --color-dark: #F5F6FB;
-  --color-light: #121212;
-  --color-border: #292929;
-  --color-light-blue: #0289b6;
-  --color-dark-blue: #105474;
-}
-
 .bg-background {
   background-color: var(--color-background);
 }
@@ -136,6 +115,9 @@ body {
 }
 .bg-dark-blue {
   background-color: var(--color-dark-blue);
+}
+.bg-aurora-background {
+  background-color: var(--color-aurora-background);
 }
 
 .text-background {
@@ -153,6 +135,12 @@ body {
 .text-dark-blue {
   color: var(--color-dark-blue);
 }
+.text-aurora {
+  color: var(--color-aurora);
+}
+.text-contact {
+  color: var(--color-contact);
+}
 
 .border-border {
   border-color: var(--color-border);
@@ -160,5 +148,8 @@ body {
 
 .border-dark {
   border-color: var(--color-dark);
+}
+.border-border-soft {
+  border-color: var(--color-border-soft);
 }
 

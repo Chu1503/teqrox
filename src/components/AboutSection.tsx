@@ -28,7 +28,7 @@ export default function AboutSection() {
         />
       </div>
 
-      <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-dark mb-10">
+      <h1 className="relative z-20 text-center font-normal text-5xl md:text-6xl lg:text-7xl text-[#F5F6FB] mb-10">
         About <span className="text-light-blue">Us</span>
       </h1>
 
@@ -39,7 +39,7 @@ export default function AboutSection() {
           whileInView="visible"
           viewport={{ amount: 0.3 }}
           // className="text-center font-normal text-sm sm:text-lg md:text-xl lg:text-xl text-dark leading-6 md:leading-12"
-          className="text-dark relative z-20 font-normal text-base leading-10 md:text-xl w-[90vw] sm:w-[75vw] lg:w-[50vw] text-center"
+          className="text-[#F5F6FB] relative z-20 font-normal text-base leading-10 md:text-xl w-[90vw] sm:w-[75vw] lg:w-[50vw] text-center"
         >
           TEQROX has all the modernization tools and cloud solutions to
           accelerate, integrate and transform your business. From data science
