@@ -80,12 +80,12 @@ export default function TypewriterEffect() {
 
   return (
     <>
-      <div className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-normal text-neutral-200 text-center">
+      <div className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-normal text-dark text-center">
         <span>
           {staticPart}
-          <span className="text-aurora">{highlightPart}</span>
+          <span className="text-light-blue">{highlightPart}</span>
         </span>
-        <span className="animate-pulse w-0.5 text-aurora">|</span>
+        <span className="animate-pulse w-0.5 text-light-blue">|</span>
       </div>
     </>
   );

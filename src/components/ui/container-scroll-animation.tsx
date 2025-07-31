@@ -110,11 +110,10 @@ export const Card = ({
       }}
       className="pointer-events-none not-only:relative max-w-fit mx-auto h-[30rem] md:h-[30rem] lg:h-[35rem] w-full p-2 md:p-6 bg-[#222222] 
 rounded-[30px] 
-shadow-[0_0_8px_#0289B6,0_0_16px_#0289B6] 
+shadow-[0_0_8px_#0289b6,0_0_16px_#0289b6] 
 before:absolute before:inset-0 before:rounded-[30px] 
-before:shadow-[0_0_12px_#0289B6,0_0_24px_#0289B6] 
+before:shadow-[0_0_12px_#0289b6,0_0_24px_#0289b6] 
 before:z-[-1]"
-
     >
       <div 
         className="h-full w-full overflow-hidden rounded-2xl bg-[#121212] md:rounded-2xl md:p-4 "

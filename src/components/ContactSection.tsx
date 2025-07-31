@@ -34,8 +34,9 @@ const ContactSection = () => {
         </h2>
         <div className="text-left font-normal text-xl md:text-2xl lg:text-2xl text-dark max-w-xl mt-10 lg:mt-0">
           <p>
-            Let us help you by first understanding your domain and the industries you serve.
-            We will connect with our best professionals to assist you in getting onboarded.
+            Let us help you by first understanding your domain and the
+            industries you serve. We will connect with our best professionals to
+            assist you in getting onboarded.
           </p>
           <div className="mt-4 z-30">
             <Link
